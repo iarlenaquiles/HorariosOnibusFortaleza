@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HorariosProvider } from '../providers/horarios/horarios';
+import { HttpClientModule } from '@angular/common/http';
+import { HorariosPageModule } from '../pages/horarios/horarios.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HorariosProvider } from '../providers/horarios/horarios';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule, 
+    HorariosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

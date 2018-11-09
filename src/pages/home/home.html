@@ -7,5 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <ion-item>
+    <ion-label>Linha</ion-label>
+    <ion-select [(ngModel)]="linha">
+      <ion-option *ngFor="let linha of linhas" [value]="linha">
+        {{linha.nome}}
+      </ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <button ion-button full (click)="consultar(linha, myDate)">Consultar</button>
 </ion-content>
